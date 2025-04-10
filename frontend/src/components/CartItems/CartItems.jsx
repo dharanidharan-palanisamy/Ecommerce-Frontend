@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import './CartItems.css'
 import { StoreContext } from "../../context/StoreContext";
-import bin from './../../assets/recycle-bin.png'
+import bin from '../assets/recycle-bin.png'
 
 const CartItems = () => {
     const {all_product,cartItems,removeFromCart,getTotalCartAmount} = useContext(StoreContext);

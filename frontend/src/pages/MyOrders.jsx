@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './CSS/MyOrders.css'
-import parcel_icon from  './../assets/parcel_icon.png';
+// import parcel_icon from  './../assets/parcel_icon.png';
 
 const MyOrders = () => {
 
@@ -34,7 +34,7 @@ const MyOrders = () => {
             {data.map((order,index)=>{
                 return (
                     <div key={index} className='my-orders-order card'>
-                        <img src={parcel_icon} alt="" />
+                        {/* <img src={parcel_icon} alt="" /> */}
                         <p>{order.items.map((item,index)=>{
                             if (index === order.items.length-1) {
                                 return item.name+" x "+item.quantity
