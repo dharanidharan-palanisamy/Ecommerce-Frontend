@@ -1,0 +1,130 @@
+/* ADD PRODUCT CONTAINER */
+.add-product {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 850px;
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* FORM FIELD WRAPPER */
+.addproduct-itemfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* INPUT FIELDS */
+.addproduct-itemfield input {
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #444;
+    transition: border-color 0.2s ease;
+}
+
+.addproduct-itemfield input:focus {
+    border-color: tomato;
+}
+
+/* PRICE SECTION */
+.addproduct-price {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* DROPDOWN SELECT */
+.add-product-selector {
+    padding: 10px;
+    width: 120px;
+    height: 42px;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s ease;
+}
+
+.add-product-selector:focus {
+    border-color: tomato;
+}
+
+/* THUMBNAIL IMAGE PREVIEW */
+.addproduct-thumbnail-img {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    object-fit: contain;
+    margin: 10px 0;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.addproduct-thumbnail-img:hover {
+    transform: scale(1.05);
+}
+
+/* SUBMIT BUTTON */
+.addproduct-btn {
+    width: 140px;
+    height: 50px;
+    border-radius: 6px;
+    background-color: tomato;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addproduct-btn:hover {
+    background-color: #e6483f;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .add-product {
+        padding: 25px 20px;
+        margin: 30px 15px;
+    }
+
+    .addproduct-price {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .add-product-selector {
+        width: 100%;
+    }
+
+    .addproduct-btn {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .addproduct-thumbnail-img {
+        height: 100px;
+        width: 100px;
+    }
+}
