@@ -8,17 +8,17 @@ const Contacts = () => {
       <div className="contact-card">
         <FaPhone className="contact-icon" />
         <h3>Call Us</h3>
-        <p>+123 456 7890</p>
+        <p>0424 222 2922</p>
       </div>
       <div className="contact-card">
         <FaEnvelope className="contact-icon" />
         <h3>Email Us</h3>
-        <p>support@example.com</p>
+        <p>up2date@gmail.com</p>
       </div>
       <div className="contact-card">
         <FaMapMarkerAlt className="contact-icon" />
         <h3>Visit Us</h3>
-        <p>123 Street, City, Country</p>
+        <p>Mettur Rd, Erode Fort, Erode,</p>
       </div>
     </section>
   );

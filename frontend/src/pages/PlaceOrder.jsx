@@ -10,13 +10,13 @@ const PlaceOrder = () => {
     const backend_url = process.env.REACT_APP_API_URL;
     const [data,setData] = useState({
         firstName:"",
-        lastName:"",
+        // lastName:"",
         email:"",
         street:"",
         city:"",
         state:"",
         zipcode:"",
-        country:"",
+        // country:"",
         phone:""
     })
     const changeHandler = (e)=>{
@@ -68,8 +68,8 @@ const PlaceOrder = () => {
             <div className="place-order-left card">
                 <p className="title">Delivery Information</p>
                 <div className="multi-fields">
-                    <input name="firstName" onChange={changeHandler} value={data.firstName} type="text" placeholder="First Name" required/>
-                    <input name="lastName" onChange={changeHandler} value={data.lastName} type="text" placeholder="Last Name" required/>
+                    <input name="firstName" onChange={changeHandler} value={data.firstName} type="text" placeholder="Name" required/>
+                    {/* <input name="lastName" onChange={changeHandler} value={data.lastName} type="text" placeholder="Last Name" required/> */}
                 </div>
                 <input name="email" onChange={changeHandler} value={data.email} type="email" placeholder="Email Address" required/>
                 <input name="street" onChange={changeHandler} value={data.street}type="text" placeholder="Street" required/>
@@ -79,7 +79,7 @@ const PlaceOrder = () => {
                 </div>
                 <div className="multi-fields">
                     <input name="zipcode" onChange={changeHandler} value={data.zipcode} type="text" placeholder="Zip code" required/>
-                    <input name="country" onChange={changeHandler} value={data.country} type="text" placeholder="Country" required/>
+                    {/* <input name="country" onChange={changeHandler} value={data.country} type="text" placeholder="Country" required/> */}
                 </div>
                 <input name="phone" onChange={changeHandler} value={data.phone} type="text" placeholder="phone" required/>
             </div>

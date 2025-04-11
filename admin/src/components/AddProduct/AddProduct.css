@@ -2,15 +2,16 @@
 .add-product {
     box-sizing: border-box;
     width: 100%;
-    max-width: 850px;
-    padding: 40px;
-    margin: 40px auto;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    padding: 50px 40px;
+    margin: 50px auto;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ffffff, #fdfcfc);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* FORM FIELD WRAPPER */
@@ -21,106 +22,114 @@
     gap: 10px;
     font-size: 15px;
     font-weight: 500;
-    color: #333;
+    color: #2b2b2b;
 }
 
 /* INPUT FIELDS */
 .addproduct-itemfield input {
     width: 100%;
     height: 48px;
-    border-radius: 6px;
-    padding: 0 15px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0 16px;
+    border: 1px solid #d0d0d0;
     outline: none;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    color: #444;
-    transition: border-color 0.2s ease;
+    color: #333;
+    background-color: #fefefe;
+    transition: all 0.25s ease;
 }
 
 .addproduct-itemfield input:focus {
-    border-color: tomato;
+    border-color: #00c853;
+    box-shadow: 0 0 4px rgba(255, 99, 71, 0.3);
 }
 
 /* PRICE SECTION */
 .addproduct-price {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
 }
 
 /* DROPDOWN SELECT */
 .add-product-selector {
     padding: 10px;
-    width: 120px;
-    height: 42px;
+    width: 140px;
+    height: 46px;
     font-size: 14px;
-    color: #555;
+    color: #444;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: #f9f9f9;
-    transition: border-color 0.2s ease;
+    background-color: #f8f8f8;
+    transition: all 0.25s ease;
 }
 
 .add-product-selector:focus {
     border-color: tomato;
+    box-shadow: 0 0 4px rgba(255, 99, 71, 0.3);
 }
 
 /* THUMBNAIL IMAGE PREVIEW */
 .addproduct-thumbnail-img {
-    height: 120px;
-    width: 120px;
-    border-radius: 10px;
-    object-fit: contain;
-    margin: 10px 0;
+    height: 130px;
+    width: 130px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 12px 0;
     cursor: pointer;
     border: 1px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .addproduct-thumbnail-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* SUBMIT BUTTON */
 .addproduct-btn {
-    width: 140px;
-    height: 50px;
-    border-radius: 6px;
-    background-color: tomato;
+    width: 160px;
+    height: 52px;
+    border-radius: 8px;
+    background-color: #00c853;
     border: none;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .addproduct-btn:hover {
-    background-color: #e6483f;
+    background-color: #00c853;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.2);
 }
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .add-product {
-        padding: 25px 20px;
+        padding: 30px 20px;
         margin: 30px 15px;
+        gap: 20px;
     }
 
     .addproduct-price {
         flex-direction: column;
-        gap: 15px;
+        gap: 16px;
     }
 
-    .add-product-selector {
+    .add-product-selector,
+    .addproduct-btn {
         width: 100%;
     }
 
     .addproduct-btn {
-        width: 100%;
         font-size: 15px;
+        height: 48px;
     }
 
     .addproduct-thumbnail-img {

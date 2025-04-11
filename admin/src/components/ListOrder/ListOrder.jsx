@@ -67,7 +67,7 @@ const ListOrder = () => {
                     <p className="order-item-phone">{order.address.phone}</p>
                     </div>
                     <p>Items : {order.items.length}</p>
-                    <p>${order.amount}</p>
+                    <p>Rs.{order.amount}</p>
                     <select onChange={(event)=>statusHandler(event,order._id)} value={order.status}>
                     <option value="Ordered">Ordered</option>
                     <option value="Shipped">Shipped</option>

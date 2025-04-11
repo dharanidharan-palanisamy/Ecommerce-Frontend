@@ -22,10 +22,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Follow Us</h3>
           <ul className="social-links">
-            <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
+            <li><a href="https://www.facebook.com/U2Derode/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
             <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
-            <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
-            <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a></li>
+            <li><a href="https://www.instagram.com/up2dateclothing_erode/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
+            {/* <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a></li> */}
             </ul>
         </div>
       </div>
