@@ -9,23 +9,22 @@ const Hero = () => {
     const navigate = useNavigate();
     return ( 
         <div className="hero">
-            {/* <div className="hero-left">
-                <h2>NEW ARRIVALS ONLY</h2>
+            <div className="hero-left">
                 <div>
                     <div className="hero-hand-icon">
-                        <p>new</p>
+                        <p>New</p>
                         <img src={hand_icon} alt="" />
                     </div>
                     <p>collections</p>
-                    <p>for everyone</p>
+                    <p>Available</p>
                 </div>
-                <div className="hero-latest-btn">
+                <div className="hero-latest-btn" onClick={()=>navigate('/men')}>
                     <div>Explore Now</div>
-                    <img src={arrow_icon} alt="" className='explore' onClick={()=>navigate('/men')}/>
+                    <img src={arrow_icon} alt="" className='explore'/>
                 </div>
-            </div> */}
+            </div>
             <div className="hero-right">
-                <img src={hero_image} alt="" />
+                <img src={hero_image} alt="" width="750px" height="550px"/>
             </div>
         </div>
      );
