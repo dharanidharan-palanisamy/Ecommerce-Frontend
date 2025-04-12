@@ -1,15 +1,16 @@
+require("dotenv").config();
 const Order = require("./../models/orderModel");
 const User = require("./../models/userModel");
 const errorHandler = require("./../utils/errorHandler");
 const jwt = require("jsonwebtoken");
-// const Stripe = require("stripe");
-require("dotenv").config({ path: "./config.env" });
+const Stripe = require("stripe");
 
 //configure stripe
-// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // placing order
 exports.placeOrder = async (req, res, next) => {
+  console.log(process.env.STRIPE_SECRET_KEY);
   const { _id } = req.user;
   const frontend_url = process.env.FRONTEND_URL;
 
@@ -26,7 +27,7 @@ exports.placeOrder = async (req, res, next) => {
 
     const line_items = items.map((item) => ({
       price_data: {
-        currency: "usd",
+        currency: "inr",
         product_data: {
           name: item.name,
         },
@@ -37,7 +38,7 @@ exports.placeOrder = async (req, res, next) => {
     // add shipping fee
     line_items.push({
       price_data: {
-        currency: "usd",
+        currency: "inr",
         product_data: {
           name: "Shipping Fee",
         },
