@@ -1,37 +1,87 @@
-.breadcrumb{
+.breadcrumb {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: #5e5e5e;
-    font-size: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 1rem;
     font-weight: 500;
-    margin: 40px 170px;
-    text-transform: capitalize;
-}
-
-@media(max-width:1280px){
-    .breadcrumb{
-        margin: 30px 50px;
-        font-size: 14px;
+    padding: 20px;
+    margin: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+  }
+  
+  .breadcrumb:hover {
+    transform: scale(1.01) rotateX(2deg) rotateY(2deg);
+  }
+  
+  .breadcrumb-link {
+    text-decoration: none;
+    color: #0074D9;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .breadcrumb-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #0074D9;
+    transition: width 0.3s ease;
+  }
+  
+  .breadcrumb-link:hover {
+    color: #005bb5;
+    transform: translateY(-2px);
+  }
+  
+  .breadcrumb-link:hover::after {
+    width: 100%;
+  }
+  
+  .breadcrumb-current {
+    color: #333;
+    font-weight: 600;
+    transform: translateZ(10px);
+    transition: transform 0.3s ease;
+  }
+  
+  .breadcrumb img {
+    width: 16px;
+    height: 16px;
+    transform: translateZ(5px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .breadcrumb {
+      font-size: 0.9rem;
+      padding: 15px;
+      gap: 8px;
     }
-}
-
-@media(max-width:1024px){
-    .breadcrumb{
-        margin: 30px 30px;
-        font-size: 13px;
+  
+    .breadcrumb img {
+      width: 14px;
+      height: 14px;
     }
-}
-
-@media(max-width:800px){
-    .breadcrumb{
-        margin: 30px 10px;
-        font-size: 12px;
+  }
+  
+  @media (max-width: 480px) {
+    .breadcrumb {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.85rem;
     }
-}
-
-@media(max-width:500px){
-    .breadcrumb{
-        font-size: 10px;
+  
+    .breadcrumb img {
+      display: none;
     }
-}
+  }
+  

@@ -16,6 +16,8 @@ import "react-toastify/dist/ReactToastify.css";
 import About from "./pages/About";
 import Contacts from "./pages/Contact";
 import Services from "./pages/Services";
+import Feedback from "./pages/Feedback"; 
+import SearchResults from './pages/SearchResults';
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
           <Route path="/About" element={<About/>}/>
           <Route path="/Contact" element={<Contacts/>}/>
           <Route path="/Services" element={<Services/>}/>
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/search" element={<SearchResults />} />
         </Routes>
         <Footer />
     </div>

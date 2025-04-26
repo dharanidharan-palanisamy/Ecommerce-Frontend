@@ -1,49 +1,68 @@
+/* ========== General Styles ========== */
 .contact-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #ffffff, #e3f2fd);
+  padding: 50px 20px;
+  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .contact-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  width: 280px;
-  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  max-width: 250px;
+  width: 100%;
 }
 
 .contact-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card h3 {
+  margin: 15px 0;
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #666;
 }
 
 .contact-icon {
-  font-size: 40px;
-  color: #007bff;
-  background: rgba(0, 123, 255, 0.1);
-  padding: 15px;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: #00d4ff;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-h3 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8px;
+.contact-card:hover .contact-icon {
+  color: #ff6600;
+  transform: rotate(360deg) scale(1.2);
 }
 
-p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
+/* ========== Responsive Styles ========== */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-card {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
 }

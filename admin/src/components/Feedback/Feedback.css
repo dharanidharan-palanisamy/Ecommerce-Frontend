@@ -1,0 +1,76 @@
+/* Feedback.css */
+
+.list-feedback {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+  background: linear-gradient(to right, #f0f4ff, #f5f7fa);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.list-feedback h1 {
+  font-size: 2.5rem;
+  color: #0d1b2a;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.listfeedback-format-main {
+  display: grid;
+  grid-template-columns: 3fr 2.5fr 2.5fr 0.5fr;
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background: #e0e7ff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.listfeedback-format {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  transform: perspective(1000px);
+}
+
+.listfeedback-format:hover {
+  transform: perspective(1000px) rotateX(3deg) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: #f9fafc;
+}
+
+.listfeedback-allfeedbacks hr {
+  border: none;
+  border-top: 1px solid #cbd5e0;
+  margin: 0.5rem 0;
+}
+
+.listfeedback-remove-icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.3s ease;
+  filter: drop-shadow(1px 1px 1px #666);
+}
+
+.listfeedback-remove-icon:hover {
+  transform: scale(1.2) rotate(-10deg);
+  filter: drop-shadow(2px 4px 6px red);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .listfeedback-format-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  .listfeedback-remove-icon {
+    margin: 10px auto;
+  }
+}

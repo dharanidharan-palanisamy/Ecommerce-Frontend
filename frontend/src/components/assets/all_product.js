@@ -31,7 +31,7 @@ let all_product = [
     name: "Formal Shirt",
     category: "men",
     image: p1_img,
-    new_price: 4000.0,
+    new_price: 400.0,
     old_price: 500.0,
   },
   {
@@ -179,6 +179,7 @@ let all_product = [
     new_price: 450.0,
     old_price: 500.0,
   },
+  
   {
     id: 27,
     name: "Hoodies",

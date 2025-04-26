@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Footer.css";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa6";
 
 const Footer = () => {
+  const footerRef = useRef(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const currentFooter = footerRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowScrollTop(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (currentFooter) {
+      observer.observe(currentFooter);
+    }
+
+    return () => {
+      if (currentFooter) {
+        observer.unobserve(currentFooter);
+      }
+    };
+  }, []);
+
+
   return (
-    <footer className="footer">
+    <footer className="footer" ref={footerRef}>
       <div className="footer-container">
 
         {/* Quick Links */}
@@ -25,15 +55,16 @@ const Footer = () => {
             <li><a href="https://www.facebook.com/U2Derode/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a></li>
             <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
             <li><a href="https://www.instagram.com/up2dateclothing_erode/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
-            {/* <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a></li> */}
-            </ul>
+          </ul>
         </div>
       </div>
 
-      {/* Footer Bottom */}
-      {/* <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Your Company Name. All Rights Reserved.</p>
-      </div> */}
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <div className="scroll-to-top" onClick={scrollToTop} title="Back to top">
+          <FaArrowUp />
+        </div>
+      )}
     </footer>
   );
 };

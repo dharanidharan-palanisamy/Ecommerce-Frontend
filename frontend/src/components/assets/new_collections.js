@@ -15,7 +15,7 @@ let new_collections = [
       name: "Formal Shirt",
       category: "men",
       image: p1_img,
-      new_price: 4000.0,
+      new_price: 400.0,
       old_price: 500.0,
     },
     {

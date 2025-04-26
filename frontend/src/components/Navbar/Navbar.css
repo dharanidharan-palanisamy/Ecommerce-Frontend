@@ -31,7 +31,7 @@
 .nav-menu {
     display: flex;
     gap: 35px;
-    align-items: center;
+    align-items: flex-start;
     list-style: none;
     font-size: 18px;
     font-weight: 600;
@@ -165,6 +165,60 @@
     border-radius: 2px;
     transition: all 0.3s ease;
 }
+
+.search-form {
+    position: relative;
+    width: 50px;
+    height: 42.5px;
+    border-radius: 25px;
+    background: white;
+    padding: 5px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    border: 2px solid #8c52ff;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Expand when hovered or input is focused */
+.search-form:hover,
+.search-form:focus-within {
+    width: 250px;
+}
+
+/* Hidden input initially */
+.search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    background: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #333;
+}
+
+/* Show input on hover or focus */
+.search-form:hover .search-input,
+.search-form:focus-within .search-input {
+    opacity: 1;
+}
+
+/* Search icon */
+.search-form .fa-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8c52ff;
+    font-size: 1.2em;
+    pointer-events: none;
+}
+
+
 
 /* Responsive */
 @media (max-width: 1024px) {
