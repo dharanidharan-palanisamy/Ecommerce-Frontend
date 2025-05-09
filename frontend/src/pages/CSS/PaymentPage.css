@@ -1,0 +1,82 @@
+/* PaymentPage.css */
+
+.payment-page-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f7fa, #92ea80);
+  padding: 20px;
+}
+
+.payment-box {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.payment-box:hover {
+  transform: perspective(1000px) rotateY(3deg) rotateX(3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.payment-box h2 {
+  text-align: center;
+  color: #00796b;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.payment-box p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.payment-box p strong {
+  color: #00796b;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #00bcd4, #92ea80);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 188, 212, 0.3);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 150, 136, 0.4);
+}
+
+@media (max-width: 480px) {
+  .payment-box {
+    padding: 30px 20px;
+  }
+
+  .payment-box h2 {
+    font-size: 22px;
+  }
+
+  .payment-box p {
+    font-size: 15px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}

@@ -18,7 +18,7 @@ import Contacts from "./pages/Contact";
 import Services from "./pages/Services";
 import Feedback from "./pages/Feedback"; 
 import SearchResults from './pages/SearchResults';
-
+import PaymentPage from "./pages/PaymentPage";
 function App() {
   return (
     <div>
@@ -47,6 +47,8 @@ function App() {
           <Route path="/Services" element={<Services/>}/>
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/payment" element={<PaymentPage />} />
+
         </Routes>
         <Footer />
     </div>
