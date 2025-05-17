@@ -2,12 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './CSS/PlaceOrder.css';
 import { StoreContext } from "../context/StoreContext";
-import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
-    const { getTotalCartAmount, all_product, cartItems } = useContext(StoreContext);
+    const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(StoreContext);
     const token = localStorage.getItem('token');
-    const backend_url = process.env.REACT_APP_API_URL;
     const navigate = useNavigate();
 
     const [data, setData] = useState({
@@ -43,7 +41,11 @@ const PlaceOrder = () => {
             total: getTotalCartAmount() + 1
         };
 
-        // Navigate to payment page with data
+        // ✅ Clear cart before navigating
+        Object.keys(cartItems).forEach((id) => {
+            removeFromCart(id);
+        });
+
         navigate('/payment', {
             state: {
                 customerDetails,
@@ -56,7 +58,8 @@ const PlaceOrder = () => {
         if (!token || getTotalCartAmount() === 0) {
             navigate('/cart');
         }
-    }, []);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); // ✅ Suppress warning safely because values are stable
 
     return (
         <form onSubmit={placeOrder} className="place-order">

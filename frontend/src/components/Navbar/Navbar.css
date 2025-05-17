@@ -114,39 +114,52 @@
 .navbar-profile {
     position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .nav-profile-dropdown {
     position: absolute;
     top: 40px;
     right: 0;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 6px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    display: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
     flex-direction: column;
-    padding: 8px 0;
+    padding: 10px 0;
     list-style: none;
     z-index: 999;
-    min-width: 160px;
-    animation: fadeIn 0.2s ease-in-out;
+    min-width: 180px;
+    animation: dropdownFade 0.3s ease;
 }
 
 .nav-profile-dropdown li {
     padding: 10px 20px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.3s ease;
+    font-weight: 500;
+    color: #333;
 }
 
 .nav-profile-dropdown li:hover {
-    background-color: #f1f8e9;
-    color: #00c853;
+    background-color: #e0f7fa;
+    color: #00796b;
 }
 
-.navbar-profile:hover .nav-profile-dropdown {
-    display: flex;
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 
 /* Hamburger Icon */
 .nav-hamburger {

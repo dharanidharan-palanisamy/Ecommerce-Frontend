@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef, useState, useEffect } from 'react';
 import './Navbar.css';
 import cart_icon from '../assets/cart_icon.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,17 +8,33 @@ import profile_icon from '../assets/profile_icon.png';
 
 const Navbar = () => {
     const [menu, setMenu] = useState("shop");
-    const { getTotalCartItems } = useContext(StoreContext);
+    const { getTotalCartItems, clearCart, cartItems } = useContext(StoreContext);
     const menuRef = useRef();
     const [searchQuery, setSearchQuery] = useState('');
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [cartCount, setCartCount] = useState(0);
     const navigate = useNavigate();
+
+    // Update cart count whenever cartItems changes
+    useEffect(() => {
+        setCartCount(getTotalCartItems());
+    }, [cartItems, getTotalCartItems]);
 
     const hamburger_toggle = () => {
         menuRef.current.classList.toggle('nav-menu-visible');
     }
 
     const logout = () => {
+        // Clear the cart first
+        clearCart();
+        
+        // Remove token from localStorage
         localStorage.removeItem('token');
+        
+        // Remove cart data from localStorage to ensure it's completely cleared
+        localStorage.removeItem('cart');
+        
+        // Redirect to home page
         window.location.replace('/');
     }
 
@@ -28,6 +44,10 @@ const Navbar = () => {
             navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
             setSearchQuery('');
         }
+    }
+
+    const toggleDropdown = () => {
+        setShowDropdown(prev => !prev);
     }
 
     return (
@@ -42,7 +62,6 @@ const Navbar = () => {
                     <li onClick={() => setMenu("men")}><Link to="/men" className={menu === "men" ? "active" : ""}>Men</Link></li>
                     <li onClick={() => setMenu("kids")}><Link to="/kids" className={menu === "kids" ? "active" : ""}>Kids</Link></li>
                 </ul>
-
                 {/* 🔍 Search Bar */}
                 <form className="search-form" onSubmit={handleSearchSubmit}>
                     <input
@@ -54,22 +73,24 @@ const Navbar = () => {
                     />
                     <i className="fa fa-search"></i>
                 </form>
-
                 {!localStorage.getItem('token') ? (
                     <Link to="/login"><button>Login</button></Link>
                 ) : (
-                    <div className='navbar-profile'>
+                    <div className='navbar-profile' onClick={toggleDropdown}>
                         <img src={profile_icon} alt="" />
-                        <ul className="nav-profile-dropdown">
-                            <li onClick={() => navigate("/myorders")}>Orders</li>
-                            <hr />
-                            <li onClick={logout}>Logout</li>
-                        </ul>
+                        {showDropdown && (
+                            <ul className="nav-profile-dropdown">
+                                <li onClick={() => navigate("/myorders")}>Orders</li>
+                                <hr />
+                                <li onClick={() => navigate("/updateprofile")}>Update Profile</li>
+                                <hr />
+                                <li onClick={logout}>Logout</li>
+                            </ul>
+                        )}
                     </div>
                 )}
-
                 <Link to="/cart"><img src={cart_icon} alt="" /></Link>
-                <div className="nav-cart-count">{getTotalCartItems()}</div>
+                <div className="nav-cart-count">{cartCount}</div>
             </div>
         </div>
     );

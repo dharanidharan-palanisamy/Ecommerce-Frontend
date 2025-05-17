@@ -13,44 +13,49 @@ import Verify from "./pages/Verify";
 import MyOrders from "./pages/MyOrders";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./App.css"; // Make sure this is where you added the custom icon style
 import About from "./pages/About";
 import Contacts from "./pages/Contact";
 import Services from "./pages/Services";
-import Feedback from "./pages/Feedback"; 
+import Feedback from "./pages/Feedback";
 import SearchResults from './pages/SearchResults';
 import PaymentPage from "./pages/PaymentPage";
+import UpdateProfile from "./components/UpdateProfile/UpdateProfile";
+import ThankYouPage from "./pages/ThankYouPage";
+
 function App() {
   return (
     <div>
-      <ToastContainer/>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/men"
-            element={<ShopCategory banner={men_banner} category="men" />}
-          />
-          <Route
-            path="/kids"
-            element={<ShopCategory banner={kid_banner} category="kids" />}
-          />
-          <Route path="/product" element={<Product />}>
-            <Route path=":productId" element={<Product/>}/>
-          </Route>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<LoginSignup />} />
-          <Route path="/order" element={<PlaceOrder/>}/>
-          <Route path="/verify" element={<Verify/>}/>
-          <Route path="myorders" element={<MyOrders/>}/>
-          <Route path="/About" element={<About/>}/>
-          <Route path="/Contact" element={<Contacts/>}/>
-          <Route path="/Services" element={<Services/>}/>
-          <Route path="/feedback" element={<Feedback />} />
-          <Route path="/search" element={<SearchResults />} />
-          <Route path="/payment" element={<PaymentPage />} />
-
-        </Routes>
-        <Footer />
+      <ToastContainer />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/men"
+          element={<ShopCategory banner={men_banner} category="men" />}
+        />
+        <Route
+          path="/kids"
+          element={<ShopCategory banner={kid_banner} category="kids" />}
+        />
+        <Route path="/product" element={<Product />}>
+          <Route path=":productId" element={<Product />} />
+        </Route>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<LoginSignup />} />
+        <Route path="/order" element={<PlaceOrder />} />
+        <Route path="/verify" element={<Verify />} />
+        <Route path="myorders" element={<MyOrders />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contacts />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/feedback" element={<Feedback />} />
+        <Route path="/search" element={<SearchResults />} />
+        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/updateprofile" element={<UpdateProfile />} />
+        <Route path="/ThankYouPage" element={<ThankYouPage />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
